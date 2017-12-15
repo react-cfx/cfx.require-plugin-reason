@@ -1,0 +1,32 @@
+{
+  "name": "cfx.require-plugin-reason",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./dist; rm -rf ./index.js; rm -rf ./register.js",
+    "build": "rollup -c",
+    "rebuild": "npm run clean; npm run build",
+    "dev": "rollup -c -w",
+    "test": "./test/coffee/index.coffee reason",
+    "postinstall": "npm run build"
+  },
+  "devDependencies": {
+    "cfx.require-plugin-coffee": "^0.0.3",
+    "ddeyes": "^0.0.4",
+    "shelljs": "^0.7.8"
+  },
+  "dependencies": {
+    "bs-platform": "^2.1.0",
+    "bsb-js": "^1.0.1",
+    "cfx.babel": "^0.0.2",
+    "cfx.require": "^0.0.2",
+    "cfx.rollup-plugin-coffee2": "^0.1.1",
+    "find": "^0.2.7",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.52.0",
+    "rollup-plugin-async": "^1.2.0",
+    "rollup-plugin-cleanup": "^2.0.0",
+    "tmp": "^0.0.33"
+  }
+}
