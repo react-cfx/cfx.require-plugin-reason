@@ -127,14 +127,12 @@ checkCacheDir = ({
     }
   , {}
 
-compiler = (id) ->
+export default (id) ->
 
   file =
     dirname: path.dirname id
     basename: path.basename id
     extname: path.extname id
-
-  # tmpDir = '/tmp/tmp-1071435tRi0Ou6uIQ'
 
   tmpFactory (tmpDir) ->
 
@@ -158,5 +156,3 @@ compiler = (id) ->
     checkCacheDir
       dirname: file.dirname
       builderPath: tmpDir
-
-export default compiler

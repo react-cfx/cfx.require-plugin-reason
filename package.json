@@ -7,20 +7,18 @@
     "build": "rollup -c",
     "rebuild": "npm run clean; npm run build",
     "dev": "rollup -c -w",
-    "test": "./test/coffee/index.coffee reason",
-    "postinstall": "npm run build"
+    "test": "./test/coffee/index.coffee reason"
   },
   "devDependencies": {
-    "cfx.require-plugin-coffee": "^0.0.3",
+    "cfx.require": "^0.0.4",
+    "cfx.require-plugin-coffee": "^0.0.4",
     "ddeyes": "^0.0.4",
     "shelljs": "^0.7.8"
   },
   "dependencies": {
     "bs-platform": "^2.1.0",
     "bsb-js": "^1.0.1",
-    "cfx.babel": "^0.0.2",
-    "cfx.require": "^0.0.2",
-    "cfx.rollup-plugin-coffee2": "^0.1.1",
+    "cfx.rollup-plugin-coffee2": "^0.1.4",
     "find": "^0.2.7",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
