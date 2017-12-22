@@ -3,14 +3,14 @@ import 'shelljs/make'
 
 import path from 'path'
 import compiler from '../../src/compiler'
-# compiler = require '../../src/compiler'
 
 _compiler = (args...) ->
-  await compiler.default.apply @, args
+  await compiler.apply @, args
 
 target.all = ->
   dd 'Hello World!!!'
 
+# yarn test_one
 target.consoleLog = ->
 
   dd await _compiler(
@@ -18,6 +18,7 @@ target.consoleLog = ->
     , '../reason/consoleLog/index.re'
   )
   
+# yarn test_reason
 target.reason = ->
 
   dd await _compiler(

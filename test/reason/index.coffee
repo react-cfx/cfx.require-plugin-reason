@@ -1,4 +1,7 @@
 #!/usr/bin/env coffee
 register = require 'cfx.require-plugin-coffee/register'
-register require 'cfx.require'
+_require = require 'cfx.require'
+{ gdf } = _require
+register gdf _require
+
 require './Makefile'

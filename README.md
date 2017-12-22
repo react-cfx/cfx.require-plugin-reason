@@ -1,6 +1,8 @@
 # cfx.require-plugin-reason
 
-(未完成)
+## Version: 0.0.1
+
+Now you can use ```await requireAsync ${reasonml_module}``` to require run in js or coffee.
 
 ## Github Repo
 

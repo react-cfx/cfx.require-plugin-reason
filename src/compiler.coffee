@@ -9,6 +9,7 @@ import mkdirp from 'mkdirp'
 import find from 'find'
 
 import { compileFile } from 'bsb-js'
+import babel from 'cfx.babel'
 
 tmpFactory = (cb) ->
 
@@ -123,23 +124,33 @@ checkCacheDir = ({
     v = fs.readFileSync fileName, 'utf-8'
     {
       r...
-      "#{k}": v
+      "#{k}":
+        babel v
+        ,
+          presets:
+            env:
+              targets:
+                node: 'current'
+          runtime: true
     }
   , {}
 
-export default (id) ->
+export default (
+  id
+  { nodeModulesPath }
+) ->
 
   file =
     dirname: path.dirname id
     basename: path.basename id
     extname: path.extname id
 
-  tmpFactory (tmpDir) ->
+  await tmpFactory (tmpDir) ->
 
-    prepareBuilderDir
+    prepareBuilderDir {
       builderPath: tmpDir
-      nodeModulesPath: path.join __dirname
-      , '../node_modules' # TODO
+      nodeModulesPath
+    }
 
     copySources
       dirname: file.dirname
